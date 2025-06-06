@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   stable-diffusion:
     image: siutin/stable-diffusion-webui-docker:latest-cuda-12.1.1
@@ -9,10 +7,10 @@ services:
     ports:
       - "7860:7860"
     volumes:
-      - ./models:/app/stable-diffusion-webui/models
-      - ./outputs:/app/stable-diffusion-webui/outputs
-      - ./extensions:/app/stable-diffusion-webui/extensions
-      - ./config:/app/stable-diffusion-webui/config
+      - ./models:~/stable-diffusion-docker/models
+      - ./outputs:~/stable-diffusion-webui/outputs
+      - ./extensions:~/stable-diffusion-webui/extensions
+      - ./config:~/stable-diffusion-webui/config
     environment:
       - CLI_ARGS=--xformers --enable-insecure-extension-access --allow-code --listen
     stdin_open: true
