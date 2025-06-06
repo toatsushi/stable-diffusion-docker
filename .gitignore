@@ -1,0 +1,8 @@
+# Docker
+*.log
+*.env
+docker-compose.override.yml
+
+# その他
+*.DS_Store
+*.swp
