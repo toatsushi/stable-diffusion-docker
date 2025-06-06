@@ -6,11 +6,6 @@ services:
     runtime: nvidia
     ports:
       - "7860:7860"
-    volumes:
-      - ./models:~/stable-diffusion-docker/models
-      - ./outputs:~/stable-diffusion-webui/outputs
-      - ./extensions:~/stable-diffusion-webui/extensions
-      - ./config:~/stable-diffusion-webui/config
     environment:
       - CLI_ARGS=--xformers --enable-insecure-extension-access --allow-code --listen
     stdin_open: true
