@@ -1,13 +1,19 @@
 services:
   stable-diffusion:
-    image: siutin/stable-diffusion-webui-docker:latest-cuda-12.1.1
+    image: sd-webui
     container_name: sd-webui
-    command: bash webui.sh
+    command: bash webui.sh --xformers --enable-insecure-extension-access --allow-code --listen
     runtime: nvidia
     ports:
       - "7860:7860"
-    environment:
-      - CLI_ARGS=--xformers --enable-insecure-extension-access --allow-code --listen
+    volumes:
+      - ./outputs:/app/stable-diffusion-webui/outputs
     stdin_open: true
     tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
     restart: unless-stopped
