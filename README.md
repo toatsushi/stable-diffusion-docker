@@ -18,7 +18,7 @@
 
 2. Docker イメージをビルドします
    ```bash
-   docker build -t stable-diffusion-webui .
+   docker build -t sd-webui:custom . --no-cache
    ```
 
 3. Docker コンテナをビルドして起動します。
@@ -37,7 +37,10 @@
 
 以下のボリュームが設定されています：
 
+- `./models`: 学習済みモデルを保存するフォルダ
 - `./outputs`: 生成された画像や結果を保存するフォルダ
+- `./extensions`: サードパーティの拡張機能を保存するフォルダ
+- `./config`: アプリケーションの設定ファイルを保存するフォルダ
 
 ## 使用方法
 
