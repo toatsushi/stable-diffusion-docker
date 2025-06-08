@@ -16,18 +16,25 @@
    cd stable-diffusion-docker
    ```
 
-2. Docker イメージをビルドします
+2. 環境設定スクリプトの実行
+
+以下のコマンドを実行して、必要なディレクトリやファイルをセットアップします。
+   ```bash
+   bash setup_sd_env.sh
+   ```
+
+3. Docker イメージをビルドします
    ```bash
    docker build -t sd-webui:custom . --no-cache
    ```
 
-3. Docker コンテナをビルドして起動します。
+4. Docker コンテナをビルドして起動します。
 
    ```bash
    docker-compose up -d
    ```
 
-4. ブラウザで以下の URL にアクセスします。
+5. ブラウザで以下の URL にアクセスします。
 
    ```
    http://localhost:7860
